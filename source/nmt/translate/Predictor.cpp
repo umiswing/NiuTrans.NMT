@@ -187,7 +187,6 @@ void Predictor::Predict(StateBundle* next, XTensor& aliveState, XTensor& encodin
     if (needReorder) {
         for (int i = 0; i < m->decoder->nlayer; i++) {
             m->decoder->selfAttCache[i].Reorder(reorderState);
-            m->decoder->enDeAttCache[i].Reorder(reorderState);
         }
     }
 
